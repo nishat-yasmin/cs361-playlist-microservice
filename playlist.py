@@ -68,7 +68,7 @@ def add_playlist(mood, url):
 
     playlist_dictionary[mood].append(url)
     save_playlists()
-    return f"Playlist added to {mood}."
+    return f"Playlist added to {mood} collection."
 
 def main():
     """Sets up and runs Playlist Service."""
