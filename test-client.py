@@ -26,21 +26,21 @@ def main():
     response = socket.recv_string()
     print(f"Response: {response}\n")
 
-    # Test 4: send "focus" request, print response
-    print("Calling Playlist Microservice with 'focus' request...")
-    socket.send_string("focus")
+    # Test 4: send "ambient" request, print response
+    print("Calling Playlist Microservice with 'ambient' request...")
+    socket.send_string("ambient")
     response = socket.recv_string()
     print(f"Response: {response}\n")
 
-    # Test 5: add "focus" URL, print response
+    # Test 5: add "ambient" URL, print response
     print("Calling Playlist Microservice with 'add' request...")
-    socket.send_string("add focus https://www.youtube.com/watch?v=oPVte6aMprI&list=RDoPVte6aMprI&start_radio=1")
+    socket.send_string("add ambient https://www.youtube.com/watch?v=oPVte6aMprI&list=RDoPVte6aMprI&start_radio=1")
     response = socket.recv_string()
     print(f"Response: {response}\n")
 
     # Test 6: fail add URL
     print("Calling Playlist Microservice with 'add' request...")
-    socket.send_string("add focus https://www.youtube.com/watch?v=nMfPqeZjc2c")
+    socket.send_string("add ambient https://www.youtube.com/watch?v=nMfPqeZjc2c")
     response = socket.recv_string()
     print(f"Response: {response}\n")
 

@@ -21,7 +21,7 @@ playlist_dictionary = {
         "https://www.youtube.com/watch?v=sF80I-TQiW0",
         "https://www.youtube.com/watch?v=q0ff3e-A7DY"
     ],
-    "focus": [
+    "ambient": [
         "https://www.youtube.com/watch?v=mPZkdNFkNps",
         "https://www.youtube.com/watch?v=8myYyMg1fFE",
         "https://www.youtube.com/watch?v=nMfPqeZjc2c"
@@ -54,13 +54,13 @@ def save_playlists():
 def get_playlist(mood):
     """Given a mood, returns a pseudorandom playlist."""
     if mood not in playlist_dictionary:
-        return "Invalid mood. Try: classical, upbeat, lofi, or focus."
+        return "Invalid mood. Try: classical, upbeat, lofi, or ambient."
     return random.choice(playlist_dictionary[mood])
 
 def add_playlist(mood, url):
     """Adds Youtube URL to playlist_dictionary for given mood."""
     if mood not in playlist_dictionary:
-        return "Invalid mood. Try: classical, upbeat, lofi, or focus."
+        return "Invalid mood. Try: classical, upbeat, lofi, or ambient."
     if not isinstance(url, str) or not url.startswith("https://www.youtube.com"):
         return "Invalid URL. Must begin with https://www.youtube.com"
     if url in playlist_dictionary[mood]:
@@ -117,7 +117,7 @@ def main():
                             "    classical\n"
                             "    upbeat\n"
                             "    lofi\n"
-                            "    focus\n"
+                            "    ambient\n"
                             "    add <mood> <https://www.youtube.com/...>")
 
             socket.send_string(response)
